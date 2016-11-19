@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppTextField.h"
 
 @interface BaseViewController : UIViewController
 

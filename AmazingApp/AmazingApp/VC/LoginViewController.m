@@ -16,14 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationItem setTitle:@"Login"];
+    
     // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.navigationController.navigationBar setHidden:YES];
+    //[self.navigationController.navigationBar setHidden:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -46,4 +48,15 @@
 }
 */
 
+- (IBAction)onClickSignIn:(id)sender {
+}
+
+- (IBAction)onClickForgotPassword:(id)sender {
+    
+    UIViewController *forgotVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgotPasswordViewController_SB_ID"];
+    [self.navigationController pushViewController:forgotVC animated:YES];
+    
+}
+- (IBAction)onClickSignUp:(id)sender {
+}
 @end

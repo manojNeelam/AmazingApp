@@ -1,30 +1,33 @@
 //
-//  RegistrationViewController.m
+//  ForgotPasswordViewController.m
 //  AmazingApp
 //
-//  Created by Manoj Kumar on 11/11/16.
+//  Created by Syntel-Amargoal1 on 11/19/16.
 //  Copyright © 2016 com.demo. All rights reserved.
 //
 
-#import "RegistrationViewController.h"
+#import "ForgotPasswordViewController.h"
 
-@interface RegistrationViewController ()
+@interface ForgotPasswordViewController ()
 
 @end
 
-@implementation RegistrationViewController
+@implementation ForgotPasswordViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self customiseView];
+    [self customiseScreen];
     // Do any additional setup after loading the view.
 }
 
--(void)customiseView
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)customiseScreen
 {
-    [self.navigationItem setTitle:@"Sign Up"];
-    
+    [self.navigationItem setTitle:@"Forgot Password"];
     
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStyleDone target:self action:@selector(onClickBackButton:)];
     [self.navigationItem setLeftBarButtonItem:backBtn];
@@ -33,21 +36,6 @@
 -(void)onClickBackButton:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
@@ -60,11 +48,6 @@
 }
 */
 
-- (IBAction)onClickAcceptTerms:(id)sender {
-}
-
-- (IBAction)onClickRegisterButton:(id)sender {
-}
-- (IBAction)onClickCountryCode:(id)sender {
+- (IBAction)onClickContinueButton:(id)sender {
 }
 @end
