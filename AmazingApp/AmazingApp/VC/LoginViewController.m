@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -49,6 +50,9 @@
 */
 
 - (IBAction)onClickSignIn:(id)sender {
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate navigateToRevealController];
 }
 
 - (IBAction)onClickForgotPassword:(id)sender {
@@ -57,6 +61,7 @@
     [self.navigationController pushViewController:forgotVC animated:YES];
     
 }
+
 - (IBAction)onClickSignUp:(id)sender {
 }
 @end

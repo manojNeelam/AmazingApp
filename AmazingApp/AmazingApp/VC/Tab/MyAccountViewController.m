@@ -7,6 +7,7 @@
 //
 
 #import "MyAccountViewController.h"
+#import "AppDelegate.h"
 
 @interface MyAccountViewController ()
 
@@ -16,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate navigateTologinVC];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,8 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self customiseView];
     // Do any additional setup after loading the view.
 }
+
+-(void)customiseView
+{
+    [self.navigationItem setTitle:@"OTP"];
+    
+    
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStyleDone target:self action:@selector(onClickBackButton:)];
+    [self.navigationItem setLeftBarButtonItem:backBtn];
+}
+
+-(void)onClickBackButton:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

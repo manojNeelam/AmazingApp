@@ -22,11 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
     // Do any additional setup after loading the view.
     
     
-    const NSInteger numberOfTableViewRows = 5;
-    const NSInteger numberOfCollectionViewCells = 10;
+    const NSInteger numberOfTableViewRows = 3;
+    const NSInteger numberOfCollectionViewCells = 2;
     
     NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:numberOfTableViewRows];
     
@@ -118,7 +120,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 149;
+    return tableView.frame.size.height/3;
 }
 
 #pragma mark - UICollectionViewDataSource Methods
@@ -140,7 +142,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(collectionView.frame.size.width, 148);
+    return CGSizeMake(collectionView.frame.size.width, collectionView.frame.size.height);
 }
 
 #pragma mark - UIScrollViewDelegate Methods

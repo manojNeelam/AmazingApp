@@ -26,6 +26,7 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CollectionViewCellIdentifier];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.showsHorizontalScrollIndicator = NO;
+    [self.collectionView setPagingEnabled:YES];
     [self.contentView addSubview:self.collectionView];
     
     return self;
@@ -43,7 +44,7 @@
     self.collectionView.dataSource = dataSourceDelegate;
     self.collectionView.delegate = dataSourceDelegate;
     self.collectionView.indexPath = indexPath;
-    [self.collectionView setContentOffset:self.collectionView.contentOffset animated:NO];
+   // [self.collectionView setContentOffset:self.collectionView.contentOffset animated:NO];
     
     [self.collectionView reloadData];
 }
