@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property CGSize deviceScreenSize;
 
 - (void)saveContext;
 -(void)navigateTologinVC;

@@ -27,6 +27,7 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.showsHorizontalScrollIndicator = NO;
     [self.collectionView setPagingEnabled:YES];
+
     [self.contentView addSubview:self.collectionView];
     
     return self;

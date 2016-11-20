@@ -9,8 +9,11 @@
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
 #import "AFTableViewCell.h"
-
+#import "AppDelegate.h"
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+{
+    AppDelegate *appDeligate;
+}
 
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
 
@@ -26,9 +29,9 @@
     
     // Do any additional setup after loading the view.
     
-    
     const NSInteger numberOfTableViewRows = 3;
     const NSInteger numberOfCollectionViewCells = 2;
+
     
     NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:numberOfTableViewRows];
     
@@ -147,7 +150,7 @@
 
 #pragma mark - UIScrollViewDelegate Methods
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+/*-(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (![scrollView isKindOfClass:[UICollectionView class]]) return;
     
@@ -157,4 +160,5 @@
     NSInteger index = collectionView.indexPath.row;
     self.contentOffsetDictionary[[@(index) stringValue]] = @(horizontalOffset);
 }
+*/
 @end
