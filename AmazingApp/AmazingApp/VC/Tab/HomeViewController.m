@@ -9,8 +9,11 @@
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
 #import "AFTableViewCell.h"
-
+#import "AppDelegate.h"
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+{
+    AppDelegate *appDeligate;
+}
 
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
 
@@ -24,7 +27,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    appDeligate=(AppDelegate*)[UIApplication sharedApplication];
+    appDeligate.deviceScreenSize=self.view.frame.size;
     const NSInteger numberOfTableViewRows = 5;
     const NSInteger numberOfCollectionViewCells = 10;
     
@@ -119,6 +123,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 149;
+    
 }
 
 #pragma mark - UICollectionViewDataSource Methods
@@ -145,7 +150,7 @@
 
 #pragma mark - UIScrollViewDelegate Methods
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+/*-(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (![scrollView isKindOfClass:[UICollectionView class]]) return;
     
@@ -155,4 +160,5 @@
     NSInteger index = collectionView.indexPath.row;
     self.contentOffsetDictionary[[@(index) stringValue]] = @(horizontalOffset);
 }
+*/
 @end

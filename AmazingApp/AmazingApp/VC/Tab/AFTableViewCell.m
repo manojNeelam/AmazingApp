@@ -26,6 +26,12 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CollectionViewCellIdentifier];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.showsHorizontalScrollIndicator = NO;
+    [self.collectionView setPagingEnabled:YES];
+    
+
+ //   [self.collectionView setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+
     [self.contentView addSubview:self.collectionView];
     
     return self;
